@@ -1,13 +1,15 @@
-<div class="text-center">
-  <div>
-    <span>{{ currentWeather.city }}, {{ currentWeather.country }}</span><br>
-    <span>{{ currentWeather.date | date: 'fullDate' }}</span>
+<div fxLayout="row">
+  <div fxFlex="50">
+    <div class="mat-title no-margin">{{ currentWeather?.city }}, {{ currentWeather?.country }}</div>
+    <div class="weather-image">
+      <img src="{{currentWeather?.image}}">
+    </div>
   </div>
-  <div>
-    <img [src]="currentWeather.image">
-    <span>{{ currentWeather.temperature | number: "1.0-0"}} °F</span>
+  <div fxFlex class="right">
+    <div class="mat-subheading-2 no-margin">{{ currentWeather?.date | date: 'EEEE, MMM d' }}</div>
+    <div class="mat-display-1 no-margin">{{ currentWeather?.temperature | number: "1.0-0"}} <span class="unit mat-body-1">°F</span></div>
   </div>
-  <div>
-    {{ currentWeather.description }}
-  </div>
+</div> 
+<div fxLayout="row">
+  <div fxFlex fxLayoutAlign="center">{{ currentWeather?.description }}</div>
 </div>

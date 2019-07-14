@@ -20,5 +20,4 @@ export class CurrentWeatherComponent implements OnInit {
       this.currentWeather = data;
     })
   }
-
 }
