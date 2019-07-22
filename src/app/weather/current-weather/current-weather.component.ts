@@ -1,6 +1,9 @@
 import { Component, OnInit } from '@angular/core';
-import { ICurrentWeather } from '../../interfaces';
 
+// Current Weather Interface
+import { ICurrentWeather } from '../weather.model';
+
+// Weather service
 import { WeatherService } from '../weather.service';
 
 @Component({

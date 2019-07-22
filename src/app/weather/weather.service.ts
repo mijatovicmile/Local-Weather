@@ -5,8 +5,8 @@ import { HttpClient } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { map } from 'rxjs/operators';
 
-// Interface
-import { ICurrentWeather } from '../interfaces';
+// Model Interface
+import { ICurrentWeather } from './weather.model';
 
 // Environment
 import { environment } from '../../environments/environment';
@@ -41,7 +41,7 @@ export class WeatherService {
       country: data.sys.country,
       date: data.dt * 1000,
       image: `http://openweathermap.org/img/w/${data.weather[0].icon}.png`,
-      temperature: this.convertKelvinToFahrenheit(data.main.temp),
+      temperature: this.convertKelvinToFahrenheit(data.main.temp), // We need to convert Kelvin to Fahrenheit, because default value returned from API is Kelvin
       description: data.weather[0].description
     }
   } 
